@@ -23,7 +23,7 @@ object AdamMLlib {
 
     // Load the prepared genotypes in an RRD, cache this RRD.
     //    val genotypes: RDD[Genotype] = ac.loadGenotypes("/user/mathijsk/ALL.chr22.phase1.projectConsensus.genotypes.vcf.adam")
-    val genotypes: RDD[Genotype] = ac.loadGenotypes("hdfs://219.219.220.149:9000/xubo/adam/output/other/smallvcf.adam")
+    val genotypes: RDD[Genotype] = ac.loadGenotypes("/xubo/adam/output/other/smallvcf.adam")
     genotypes.cache();
     println("First id: " + genotypes.first().sampleId)
 

@@ -21,7 +21,7 @@ object kmer {
     // Load alignments from disk
     //val reads = ac.loadAlignments("/data/NA21144.chrom11.ILLUMINA.adam",
     //val reads = ac.loadAlignments("/xubo/adam/output/small.adam",
-    val reads = ac.loadAlignments("hdfs://219.219.220.149:9000/xubo/adam/output/small.adam",
+    val reads = ac.loadAlignments("file/adam/learning/input/small.adam",
       projection = Some(Projection(AlignmentRecordField.sequence, AlignmentRecordField.readMapped, AlignmentRecordField.mapq)))
 
     // Generate, count and sort 21-mers
@@ -31,7 +31,7 @@ object kmer {
     // Print the top 10 most common 21-mers
     //SaveAsFile
     val iString = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
-    val soutput = "hdfs://219.219.220.149:9000/xubo/adam/output/kmer/" + iString + "/smallkmers21.adam";
+    val soutput = "file/adam/learning/output/kmer/" + iString + "/smallkmers21.adam";
 
     println("kmers.count(reduceByKey):" + kmers.count)
     kmers.saveAsTextFile(soutput)

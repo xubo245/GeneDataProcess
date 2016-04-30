@@ -49,7 +49,7 @@ object CountAlignments {
       .reduceByKey(_ + _)
       .foreach(println)
     //    val iString = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
-    //    val soutput = "hdfs://219.219.220.149:9000/xubo/adam/output/examples/" + iString + "/CountAlignments.adam";
+    //    val soutput = "/xubo/adam/output/examples/" + iString + "/CountAlignments.adam";
     //    recs.saveAsTextFile(soutput)
   }
 }

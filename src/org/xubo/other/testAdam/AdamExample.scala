@@ -15,7 +15,6 @@ import org.bdgenomics.adam.projections.AlignmentRecordField
 object AdamExample {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("AdamExample").setMaster("local")
-    //	val conf = new SparkConf().setAppName("AdamExample").setMaster("spark://219.219.220.149:7077")
     //    val conf = new SparkConf().setAppName("AdamExample")
     val sc = new SparkContext(conf)
 
@@ -23,7 +22,7 @@ object AdamExample {
 
     // Read some reads. These come from a 1000genomes BAM file and were converted earlier
     //	val reads = ac.loadAlignments("/user/mathijsk/NA21144.chrom11.ILLUMINA.adam")
-    val reads = ac.loadAlignments("hdfs://219.219.220.149:9000/xubo/adam/output/small.adam")
+    val reads = ac.loadAlignments("file/adam/learning/input/small.adam")
     reads.cache();
 
     val kmers = reads.flatMap { read =>
@@ -33,6 +32,6 @@ object AdamExample {
       .sortByKey(ascending = false)
     // Print the top 10 most common 21-mers
     kmers.take(10).foreach(println)
-    kmers.saveAsTextFile("hdfs://219.219.220.149:9000/xubo/adam/output/small.adam.kmers21")
+    kmers.saveAsTextFile("file/adam/learning/output/small.adam.kmers21")
   }
 }

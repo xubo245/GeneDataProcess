@@ -16,8 +16,7 @@ object readFileFromGRCH38AllFragment2 {
 
     val ac = new ADAMContext(sc)
     //    val file1 = "file/adam/hs38DH/hs38DH.fa"
-    //    val file1 = "hdfs://219.219.220.149:9000/xubo/adam/hs38DH/hs38DH.fa"
-    val file1 = "hdfs://219.219.220.149:9000/xubo/data/GRCH38/bwa/GCA_000001405.15_GRCh38/GCA_000001405.15_GRCh38_full_analysis_set.fna"
+    val file1 = "/xubo/data/GRCH38/bwa/GCA_000001405.15_GRCh38/GCA_000001405.15_GRCh38_full_analysis_set.fna"
 
     //load by SparkContext textFile
     val fq0 = sc.textFile(file1)

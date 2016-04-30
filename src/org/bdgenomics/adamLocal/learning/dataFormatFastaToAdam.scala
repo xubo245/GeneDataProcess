@@ -10,10 +10,10 @@ import java.util.Date
 
 object dataFormatFastaToAdam {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("test Adam kmer").setMaster("local")
+    val conf = new SparkConf().setAppName("dataFormatFastaToAdam").setMaster("local")
     val sc = new SparkContext(conf)
     val ac = new ADAMContext(sc)
-    val reads = ac.loadAlignments("hdfs://219.219.220.149:9000/xubo/adam/output/artificial.adam")
+    val reads = ac.loadAlignments("file/adam/learning/input/artificial.adam")
     println("****************************************");
     reads.foreach(println)
     println("count:" + reads.count + " end");
@@ -21,8 +21,8 @@ object dataFormatFastaToAdam {
     val out = reads.map(_.getSequence())
     println("****************************************");
     val iString = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
-    val soutput = "hdfs://219.219.220.149:9000/xubo/adam/output/AdamFromFasta/" + iString + "/AdamFromFa.adam";
-    val soutput2 = "hdfs://219.219.220.149:9000/xubo/adam/output/fa/" + iString + "/AdamFromFa.adam";
+    val soutput = "file/adam/learning/output/AdamFromFasta/" + iString + "/AdamFromFa.adam";
+    val soutput2 = "file/adam/learning/output/fa/" + iString + "/AdamFromFa.adam";
     reads.saveAsTextFile(soutput)
     out.saveAsTextFile(soutput2)
 

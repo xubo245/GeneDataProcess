@@ -16,11 +16,11 @@ object dataFormat {
     val conf = new SparkConf().setAppName("test Adam kmer").setMaster("local")
     val sc = new SparkContext(conf)
     val ac = new ADAMContext(sc)
-    val reads = ac.loadAlignments("hdfs://219.219.220.149:9000/xubo/adam/output/small.adam",
+    val reads = ac.loadAlignments("file/adam/learning/input/small.adam",
       projection = Some(Projection(AlignmentRecordField.sequence, AlignmentRecordField.readMapped, AlignmentRecordField.mapq)))
     reads.foreach(println)
     val iString = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
-    val soutput = "hdfs://219.219.220.149:9000/xubo/adam/output/AdamFromSAM/" + iString + "/AdamFromFa.adam";
+    val soutput = "file/adam/learning//output/AdamFromSAM/" + iString + "/AdamFromFa.adam";
     reads.saveAsTextFile(soutput)
   }
 }

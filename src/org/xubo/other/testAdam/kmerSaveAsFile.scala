@@ -8,14 +8,12 @@ import java.util._;
 object kmerSaveAsFile {
   def main(args: Array[String]) {
     val conf = new SparkConf().setAppName("test Adam kmer").setMaster("local")
-    //  val conf=new SparkConf().setAppName("test Adam kmer").setMaster("local")
-    //  val conf=new SparkConf().setAppName("test Adam kmer")
     val sc = new SparkContext(conf)
     val ac = new ADAMContext(sc)
     // Load alignments from disk
     //val reads = ac.loadAlignments("/data/NA21144.chrom11.ILLUMINA.adam",
     //  val reads = ac.loadAlignments("/xubo/adam/output/small.adam",
-    val reads = ac.loadAlignments("hdfs://219.219.220.149:9000/xubo/adam/output/small.adam",
+    val reads = ac.loadAlignments("file/adam/learning/input/small.adam",
       projection = Some(Projection(AlignmentRecordField.sequence, AlignmentRecordField.readMapped, AlignmentRecordField.mapq)))
     // Generate, count and sort 21-mers
     val kmers = reads.flatMap(_.getSequence.sliding(21).map(k => (k, 1L))).reduceByKey(_ + _).map(_.swap).sortByKey(ascending = false)
@@ -23,7 +21,7 @@ object kmerSaveAsFile {
 
     //
     val iString = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())
-    val soutput = "hdfs://219.219.220.149:9000/xubo/adam/output/kmer/" + iString + "/smallkmers21.adam";
+    val soutput = "file/adam/learning/output/kmer/" + iString + "/smallkmers21.adam";
 
     println("kmers.count(reduceByKey):" + kmers.count)
     kmers.saveAsTextFile(soutput)
