@@ -9,7 +9,7 @@ LIBBWA_LIBS = -lrt
 
 LIBBWA_LIBS = -lrt -lz
 
-不然会报错误【5】
+不然会报错误【1】
 
 
 2.make之后修改java.library.path
@@ -250,12 +250,12 @@ paird2：
 
 附录  
 错误：  
-错误【5】：
+错误【1】：
 
 libbwa.so: undefined symbol: gzdopen
 
 
-错误【6】
+错误【2】
 
 
 java.lang.UnsatisfiedLinkError: no bwa in java.library.path

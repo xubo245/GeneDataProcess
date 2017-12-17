@@ -911,16 +911,18 @@
 	hadoop@Mcnode6:~/xubo/tools/SparkBWA/build$ 
 	
 	
-解决办法参考【5】，没有实践
+解决办法参考【1】，没有实践
 
-
+参考
+	【1】 http://blog.csdn.net/walkerjong/article/details/37763777
+	
+	
 #参考
 
 	【1】https://github.com/xubo245/AdamLearning
 	【2】https://github.com/bigdatagenomics/adam/ 
 	【3】https://github.com/xubo245/SparkLearning
 	【4】http://spark.apache.org
-	【5】 http://blog.csdn.net/walkerjong/article/details/37763777
 		
 #研究成果：
 

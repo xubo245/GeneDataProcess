@@ -200,3 +200,26 @@ http://219.219.220.248:8042/node/containerlogs/container_1466866953605_0001_01_0
 	16/06/25 23:28:25 INFO remote.RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
 	16/06/25 23:28:25 INFO util.ShutdownHookManager: Shutdown hook called
 	16/06/25 23:28:25 INFO util.ShutdownHookManager: Deleting directory /home/hadoop/cloud/workspace/tmp/nm-local-dir/usercache/hadoop/appcache/application_1466866953605_0001/spark-1755b7f0-a414-4e4c-ab0a-ba6eb1ae2e1c
+	
+	
+#参考
+
+	【1】https://github.com/xubo245/AdamLearning
+	【2】https://github.com/bigdatagenomics/adam/ 
+	【3】https://github.com/xubo245/SparkLearning
+	【4】http://spark.apache.org
+		
+#研究成果：
+
+	【1】 [BIBM] Bo Xu, Changlong Li, Hang Zhuang, Jiali Wang, Qingfeng Wang, Chao Wang, and Xuehai Zhou, "Distributed Gene Clinical Decision Support System Based on Cloud Computing", in IEEE International Conference on Bioinformatics and Biomedicine. (BIBM 2017, CCF B)
+	【2】 [IEEE CLOUD] Bo Xu, Changlong Li, Hang Zhuang, Jiali Wang, Qingfeng Wang, Xuehai Zhou. Efficient Distributed Smith-Waterman Algorithm Based on Apache Spark (CLOUD 2017, CCF-C).
+	【3】 [CCGrid] Bo Xu, Changlong Li, Hang Zhuang, Jiali Wang, Qingfeng Wang, Jinhong Zhou, Xuehai Zhou. DSA: Scalable Distributed Sequence Alignment System Using SIMD Instructions. (CCGrid 2017, CCF-C).
+	【4】more: https://github.com/xubo245/Publications
+	
+#Help
+
+	If you have any questions or suggestions, please write it in the issue of this project or send an e-mail to me: xubo245@mail.ustc.edu.cn
+	Wechat: xu601450868
+	QQ: 601450868
+	
+	
